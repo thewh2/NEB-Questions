@@ -2,6 +2,8 @@
 
 A premium, interactive web application designed for NEB (National Examination Board) Class 12 students in Nepal. This platform provides a centralized, high-performance interface for practicing previous year questions and model papers across multiple subjects.
 
+### 🌐 Live Demo: [https://nebquestion.netlify.app/](https://nebquestion.netlify.app/)
+
 ![NEB Questions Banner](https://img.shields.io/badge/NEB-Practice_Questions-6366f1?style=for-the-badge&logo=javascript)
 
 ## 🚀 Key Features
