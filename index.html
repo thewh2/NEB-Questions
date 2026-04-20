@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEB Practice Question | Class 12 Exam Preparation</title>
+    <meta name="description"
+        content="Access previous year NEB exam questions for Management subjects. Practice with Account, Computer, Economics, English, Math, Nepali, and Social Studies.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="hero-title" id="main-title">
+            <a href="index.html" style="text-decoration: none; color: inherit;">NEB Question</a>
+        </h1>
+        <p class="hero-subtitle">NEB Class 12 Previous Year Questions & Model Questions</p>
+        
+        <div class="tabs-container" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; align-items: center;">
+            <div class="custom-dropdown" id="subject-dropdown">
+                <div class="dropdown-trigger tab-btn active">
+                    <span id="current-filter-text">All Subjects</span>
+                    <span class="chevron" style="margin-left: 10px; font-size: 0.8rem;">▼</span>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <!-- Options populated via JS -->
+                </div>
+            </div>
+            <button class="tab-btn" id="fav-tab-btn" onclick="switchTab('favs')">⭐ Favorites</button>
+        </div>
+
+        <div class="search-container" id="search-div"
+            style="margin-top: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+            <input type="text" id="subject-search" placeholder="Search subjects, years, or paper names..."
+                style="width: 100%; padding: 1rem 1.5rem; border-radius: 50px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.05); color: white; font-size: 1rem; outline: none; backdrop-filter: blur(10px);">
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="subject-grid" class="subject-grid">
+            <!-- Cards will be injected here -->
+        </div>
+
+        <div id="favorites-grid" class="subject-grid" style="display: none;">
+            <!-- Favorite cards will be injected here -->
+        </div>
+
+        <div id="fav-actions" style="display: none; text-align: center; margin-top: 3rem;">
+            <button class="clear-btn" onclick="clearAllFavorites()">🗑️ Clear All Favorites</button>
+        </div>
+    </main>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="gallery-modal">
+        <div class="modal-header">
+            <div>
+                <h2 id="modal-title" style="font-size: 1.8rem; font-weight: 800;">Subject Name</h2>
+                <p id="modal-subtitle" style="color: var(--accent);">Year 202X</p>
+            </div>
+            <button class="close-btn" id="close-modal">&times;</button>
+        </div>
+            <div id="questions-container" class="questions-container">
+                <!-- Images will be injected here -->
+            </div>
+            <div class="modal-footer" style="padding: 2rem; text-align: center; border-top: 1px solid var(--glass-border);">
+                <button id="pdf-download-btn" class="download-btn" style="margin: 0 auto; display: none;">
+                    <span>📄</span> Download as PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal for Single Image -->
+    <div class="lightbox-modal" id="lightbox-modal">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="nav-btn prev-btn" id="prev-image">&lsaquo;</button>
+        <button class="nav-btn next-btn" id="next-image">&rsaquo;</button>
+
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Full view">
+            <button id="star-btn" class="star-btn">
+                <span>⭐</span>
+                <small style="font-size: 8px; display: block;">SAVE</small>
+            </button>
+            <div class="lightbox-pagination" id="lightbox-pagination"
+                style="margin-top: 1.5rem; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <!-- Page numbers will be injected here -->
+            </div>
+            <div class="lightbox-actions">
+                <a id="download-btn" href="" download class="download-btn">
+                    <span>📥</span> Download Paper
+                </a>
+            </div>
+        </div>
+        <div id="loader"
+            style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; font-size:1.2rem; font-weight:600; background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 10px; backdrop-filter: blur(5px);">
+            Loading...</div>
+    </div>
+
+    <footer class="modern-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>NEB Question</h3>
+                <p>Providing the best resources for Class 12 students to excel in their board exams.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#main-title">Home</a></li>
+                    <li><a href="https://wh2store.netlify.app/" target="_blank">WH2 Store</a></li>
+                    <li><a href="https://thewh2.netlify.app/#contact" target="_blank">Contact Developer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NEB Question. Developed with ❤️ by <a href="https://thewh2.netlify.app/" target="_blank"
+                    class="dev-name">TheWH2</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
